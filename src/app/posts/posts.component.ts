@@ -1,11 +1,11 @@
 import { AddPostComponent } from "../shared/dialogs/add-post/add-post.component";
-import { Config } from "./../shared/config";
 import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { DataProvider } from "../shared/services/data";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 import { DialogService } from "../shared/services/dialog.service";
 import { MatDialogConfig, MatDialog } from "@angular/material";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-posts",
@@ -28,7 +28,7 @@ export class PostsComponent implements OnInit {
   }
 
   getPosts() {
-    this.dataProvider.getAll<any>(Config.apiUrl + "/posts").subscribe(
+    this.dataProvider.getAll<any>(environment.apiUrl + "/posts").subscribe(
       (res) => {
         this.dataSource = new MatTableDataSource<PeriodicElement>(res);
         this.dataSource.paginator = this.paginator;
