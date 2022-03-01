@@ -1,0 +1,19 @@
+footer {
+  background-color: #005b97;
+  .nav-link {
+    padding: 0.5rem 0.5rem;
+    color: #fff;
+    font-weight: bold;
+  }
+  .fotter-bottom {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0000005e;
+    p {
+      color: #fff;
+      margin: 0;
+    }
+  }
+}

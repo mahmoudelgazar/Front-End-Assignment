@@ -1,0 +1,53 @@
+$blue: #0071bc;
+.navbar {
+  .navbar-toggler {
+    border: none;
+    background: #ddd;
+  }
+  .navbar-nav {
+    a:not(.lang) {
+      color: #333;
+      position: relative;
+      padding-right: 0.8rem;
+      padding-left: 0.8rem;
+      display: inline-block;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        right: 10%;
+        width: 80%;
+        height: 2px;
+        transform: scaleX(0);
+        background-color: $blue;
+        transition: transform 0.3s;
+      }
+      &:hover,
+      &.active {
+        color: $blue;
+
+        &:after {
+          transform: scaleX(1);
+        }
+      }
+    }
+    .lang {
+      border: 1px solid #0071bca8;
+      color: #0071bc;
+      padding: 3px 10px;
+      border-radius: 5px;
+      margin: 0.2rem 0.8rem;
+      display: inline-block;
+    }
+  }
+  .navbar-other {
+    .navbar-nav {
+      > .nav-item {
+        + .nav-item {
+          margin-left: 0.8rem;
+        }
+      }
+    }
+  }
+}
